@@ -4,6 +4,7 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import cv2
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
+import sys
 
 from keras.models import Model
 from keras.layers import *
@@ -14,8 +15,8 @@ import keras.backend as K
 from keras.callbacks import LearningRateScheduler, ModelCheckpoint
 
 
-IMAGE_LIB = 'input/2d_images/'
-MASK_LIB = 'input/2d_masks/'
+IMAGE_LIB = str(sys.argv[1])+'/input/2d_images/'
+MASK_LIB = str(sys.argv[1])+'/input/2d_masks/'
 IMG_HEIGHT, IMG_WIDTH = 32, 32
 SEED=42
 
