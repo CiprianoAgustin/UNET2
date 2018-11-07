@@ -87,7 +87,7 @@ image_batch, mask_batch = next(my_generator(x_train, y_train, 8))
 model.compile(optimizer=Adam(2e-4), loss='binary_crossentropy', metrics=[dice_coef])
 
 weight_saver = ModelCheckpoint('lung.h5', monitor='val_dice_coef',
-                                              save_best_only=True, save_weights_only=True)
+                                              save_best_only=True)
 annealer = LearningRateScheduler(lambda x: 1e-3 * 0.8 ** x)
 
 hist = model.fit_generator(my_generator(x_train, y_train, 8),
