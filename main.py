@@ -17,7 +17,7 @@ from keras.callbacks import LearningRateScheduler, ModelCheckpoint
 
 IMAGE_LIB = str(sys.argv[1])+'/input/2d_images/'
 MASK_LIB = str(sys.argv[1])+'/input/2d_masks/'
-IMG_HEIGHT, IMG_WIDTH = 512, 512
+IMG_HEIGHT, IMG_WIDTH = 256, 256
 SEED=42
 
 all_images = [x for x in sorted(os.listdir(IMAGE_LIB)) if x[-4:] == '.tif']
